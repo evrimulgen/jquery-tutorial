@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>jQuery in One Example | HMKCode</title>
+	<style type="text/css">
+	.simple{
+		width:200px;
+		text-align:center;
+		border:1px dashed #333;
+		margin:4px;
+		padding:4px;
+		cursor:pointer;
+	}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	// 1. Execute jQuery when document is ready
+	$( document ).ready(function() {
+		
+		// 2. Find an HTML element (all of the below are returning the same element)
+		$("div") //a. return all elements of type div
+		$("#xDiv") // b. return element with id="xDiv"
+		$(".simple") // c. return elements with class="simple"
+		
+		// 3. Modify the appearance of the selected element
+		$("#xDiv").css("background-color","#ffcc00");
+		
+		// 4. Modify element dimensoin
+		$("#xDiv").width('300px');
+		
+		// 5. Change the content
+		$("#xDiv").text("Content changed");
+		
+		// 6. Add event listener (mouseover listener)
+		$("div").mouseover( function() {
+			$("#xDiv").css("color","#0066ff");
+		});
+		$("div").mouseout( function() {
+			$("#xDiv").css("color","#000");
+		});
+		
+		// 7. Add effect (hide effect)
+		$("div").click( function() {
+			$(this).hide();
+		});
+		// 8. Add new element
+		$("body").append($("<div>").text("new HTML div element").addClass("simple"));
+		
+	});
+	</script>
+</head>
+
+<body>
+	<div id="xDiv" class="simple">Simple HTML Element</div>
+</body>
+
+
+</html>
